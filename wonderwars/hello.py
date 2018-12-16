@@ -1,19 +1,15 @@
-
 from threading import Thread
 import time
-import sys
-
-
-# sys.argv = ['serve.py', '--connect-type', 'cue', '--connect-name', 'Vader']
-sys.argv = ['serve.py', '--connect-type', 'dash', '--connect-name', 'Yoda']
 
 import WonderPy.core.wwMain
 from WonderPy.core.wwConstants import WWRobotConstants
 from WonderPy.components.wwMedia import WWMedia
 
 
-
-
+"""
+This example shows connecting to the robot and issuing some simple commands.
+See the other 'tutorial' and 'misc' examples for more complex scenarios!
+"""
 
 
 class MyClass(object):
@@ -24,7 +20,7 @@ class MyClass(object):
         """
 
         print("Starting a thread for %s." % (robot.name))
-        # Thread(target=self.thread_hello, args=(robot,)).start()
+        Thread(target=self.thread_hello, args=(robot,)).start()
 
     def thread_hello(self, robot):
         # robot is the robot we've connected to.
@@ -73,23 +69,8 @@ class MyClass(object):
         else:
             raise ValueError("unhandled robot type: %s on %s" % (str(for_this_robot.robot_type), for_this_robot.name))
 
-'''
+
+
+# kick off the program !
 if __name__ == "__main__":
     WonderPy.core.wwMain.start(MyClass())
-
-'''
-
-WonderPy.core.wwMain.start(MyClass())
-
-from flask import Flask
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    #global robot
-    print("here")
-    # Thread(target=MyClass.thread_hello, args=(robot,)).start()
-    Thread(target=MyClass.thread_hello, args=(robot,)).start()
-    return 'Hello, World!'
-
-
