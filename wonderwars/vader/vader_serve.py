@@ -18,6 +18,8 @@ class Application(object):
         self.map.connect('vaderpres', '/vader/pres', app=vaderpres)
         self.map.connect('vaderwins', '/vader/wins', app=vaderwins)
         self.map.connect('vaderloses', '/vader/loses', app=vaderloses)
+        self.map.connect('vaderrock', '/vader/rock', app=vaderrock)
+        self.map.connect('vaderpaper', '/vader/paper', app=vaderpaper)
         self.map.connect('vaderstop', '/vader/stop', app=vaderstop)
 
     def __call__(self, environ, start_response):

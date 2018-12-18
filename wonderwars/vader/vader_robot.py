@@ -30,3 +30,21 @@ class VaderRobot(RobotConnection):
 
         robot.commands.head.stage_tilt_angle(-15)
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_05)
+
+    def rock(self, robot):
+        self.appearance(robot);
+
+        for i in range(1,4):
+            robot.commands.head.stage_tilt_angle(-15)
+            robot.commands.head.stage_tilt_angle(15)
+
+        robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_02)
+
+    def paper(self, robot):
+        self.appearance(robot);
+
+        for i in range(1,4):
+            robot.commands.head.stage_tilt_angle(-15)
+            robot.commands.head.stage_tilt_angle(15)
+
+        robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_03)

@@ -127,3 +127,41 @@ def vaderloses(environ, start_response):
     ]
     start_response(status, response_headers)
     return iter([data])
+
+
+@validator
+def vaderrock(environ, start_response):
+    """Simplest possible application object"""
+
+    data = 'rock'
+    status = '200 OK'
+
+    with open(db_file, "w") as commands_file:
+        commands_file.write('{"staged":["rock"]}')
+
+    response_headers = [
+        ('Content-type', 'text/plain'),
+        ('Content-Length', str(len(data))),
+        ('X-Gunicorn-Version', __version__),
+    ]
+    start_response(status, response_headers)
+    return iter([data])
+
+
+@validator
+def vaderpaper(environ, start_response):
+    """Simplest possible application object"""
+
+    data = 'paper'
+    status = '200 OK'
+
+    with open(db_file, "w") as commands_file:
+        commands_file.write('{"staged":["paper"]}')
+
+    response_headers = [
+        ('Content-type', 'text/plain'),
+        ('Content-Length', str(len(data))),
+        ('X-Gunicorn-Version', __version__),
+    ]
+    start_response(status, response_headers)
+    return iter([data])

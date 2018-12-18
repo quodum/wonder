@@ -1,4 +1,5 @@
 import sys
+import os
 from wsgiref.validate import validator
 from gunicorn import __version__
 
@@ -136,6 +137,25 @@ def yodarock(environ, start_response):
 
     with open(db_file, "w") as commands_file:
         commands_file.write('{"staged":["rock"]}')
+
+    response_headers = [
+        ('Content-type', 'text/plain'),
+        ('Content-Length', str(len(data))),
+        ('X-Gunicorn-Version', __version__),
+    ]
+    start_response(status, response_headers)
+    return iter([data])
+
+
+@validator
+def yodapaper(environ, start_response):
+    """Simplest possible application object"""
+
+    data = 'paper'
+    status = '200 OK'
+
+    with open(db_file, "w") as commands_file:
+        commands_file.write('{"staged":["paper"]}')
 
     response_headers = [
         ('Content-type', 'text/plain'),
