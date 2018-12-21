@@ -11,7 +11,6 @@ class VaderRobot(RobotConnection):
         robot.commands.eyering.stage_eyering((False, False, True, False, False, False, False, False, False, False, True, False), 0.4)
 
     def presents(self, robot):
-        self.appearance(robot)
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_08)
 
         # 4 ture
@@ -19,21 +18,15 @@ class VaderRobot(RobotConnection):
             robot.commands.body.stage_wheel_speeds  (-7.8, 7.8)
 
     def wins(self, robot):
-        self.appearance(robot)
-
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_07)
         robot.commands.body.stage_wheel_speeds  (-25.56, 25.56)
         robot.commands.body.stage_wheel_speeds  (25, -25)
 
     def loses(self, robot):
-        self.appearance(robot)
-
         robot.commands.head.stage_tilt_angle(-15)
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_05)
 
     def rock(self, robot):
-        self.appearance(robot)
-
         for i in range(1,4):
             robot.commands.head.stage_tilt_angle(-15)
             robot.commands.head.stage_tilt_angle(15)
@@ -41,8 +34,6 @@ class VaderRobot(RobotConnection):
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_02)
 
     def paper(self, robot):
-        self.appearance(robot)
-
         for i in range(1,4):
             robot.commands.head.stage_tilt_angle(-15)
             robot.commands.head.stage_tilt_angle(15)

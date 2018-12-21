@@ -15,7 +15,6 @@ class YodaRobot(RobotConnection):
             robot.commands.head.stage_tilt_angle(15)
 
     def presents(self, robot):
-        self.appearance(robot)
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_05)
 
         # 4 ture
@@ -23,22 +22,17 @@ class YodaRobot(RobotConnection):
             robot.commands.body.stage_wheel_speeds (-7.8, 7.8)
 
     def wins(self, robot):
-        self.appearance(robot)
-
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_05)
         robot.commands.body.stage_wheel_speeds  (-35, 35)
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_05)
         robot.commands.body.stage_wheel_speeds  (35, -35)
 
     def loses(self, robot):
-        self.appearance(robot)
         robot.commands.head.stage_tilt_angle(-15)
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_07)
 
     def rock(self, robot):
-        self.appearance(robot)
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_02)
 
     def paper(self, robot):
-        self.appearance(robot)
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_03)
