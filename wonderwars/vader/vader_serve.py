@@ -20,6 +20,7 @@ class Application(object):
         self.map.connect('vaderloses', '/vader/loses', app=vaderloses)
         self.map.connect('vaderrock', '/vader/rock', app=vaderrock)
         self.map.connect('vaderpaper', '/vader/paper', app=vaderpaper)
+        self.map.connect('vaderscissors', '/vader/scissors', app=vaderscissors)
         self.map.connect('vaderstop', '/vader/stop', app=vaderstop)
 
     def __call__(self, environ, start_response):

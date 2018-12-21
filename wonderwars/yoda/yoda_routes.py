@@ -164,3 +164,21 @@ def yodapaper(environ, start_response):
     ]
     start_response(status, response_headers)
     return iter([data])
+
+@validator
+def yodascissors(environ, start_response):
+    """Simplest possible application object"""
+
+    data = 'scissors'
+    status = '200 OK'
+
+    with open(db_file, "w") as commands_file:
+        commands_file.write('{"staged":["scissors"]}')
+
+    response_headers = [
+        ('Content-type', 'text/plain'),
+        ('Content-Length', str(len(data))),
+        ('X-Gunicorn-Version', __version__),
+    ]
+    start_response(status, response_headers)
+    return iter([data])

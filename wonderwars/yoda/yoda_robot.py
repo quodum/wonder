@@ -32,7 +32,19 @@ class YodaRobot(RobotConnection):
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_07)
 
     def rock(self, robot):
+        for i in range(1,4):
+            robot.commands.head.stage_tilt_angle(-15)
+            robot.commands.head.stage_tilt_angle(15)
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_02)
 
     def paper(self, robot):
+        for i in range(1,4):
+            robot.commands.head.stage_tilt_angle(-15)
+            robot.commands.head.stage_tilt_angle(15)
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_03)
+
+    def scissors(self, robot):
+        for i in range(1,4):
+            robot.commands.head.stage_tilt_angle(-15)
+            robot.commands.head.stage_tilt_angle(15)
+        robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_04)
