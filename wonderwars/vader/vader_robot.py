@@ -5,7 +5,7 @@ from wonderwars.robot import RobotConnection
 
 class VaderRobot(RobotConnection):
     def appearance(self, robot):
-        robot.commands.RGB.stage_front(0, 0, 1)
+        robot.commands.RGB.stage_front(0.5, 0, 0)
         robot.commands.RGB.stage_ear_left(0, 0, 0)
         robot.commands.RGB.stage_ear_right(0, 0, 0)
         robot.commands.eyering.stage_eyering((False, False, True, False, False, False, False, False, False, False, True, False), 0.4)
@@ -19,8 +19,8 @@ class VaderRobot(RobotConnection):
 
     def wins(self, robot):
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_07)
-        robot.commands.body.stage_wheel_speeds  (-25.56, 25.56)
-        robot.commands.body.stage_wheel_speeds  (25, -25)
+        robot.commands.body.stage_wheel_speeds  (-15, 15)
+        robot.commands.body.stage_wheel_speeds  (15, -15)
 
     def loses(self, robot):
         robot.commands.head.stage_tilt_angle(-15)

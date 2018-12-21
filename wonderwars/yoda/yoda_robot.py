@@ -23,9 +23,9 @@ class YodaRobot(RobotConnection):
 
     def wins(self, robot):
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_05)
-        robot.commands.body.stage_wheel_speeds  (-35, 35)
+        robot.commands.body.stage_wheel_speeds  (-15, 15)
         robot.cmds.media.stage_audio(WWMedia.WWSound.WWSoundDash.CUSTOM_05)
-        robot.commands.body.stage_wheel_speeds  (35, -35)
+        robot.commands.body.stage_wheel_speeds  (15, -15)
 
     def loses(self, robot):
         robot.commands.head.stage_tilt_angle(-15)
