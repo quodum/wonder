@@ -45,7 +45,7 @@ class RobotConnection(object):
         # print("on_sensors %s." % (robot.name))
         # self.on_sensors_called += 1
         # if self.on_sensors_called == 1:
-        print('on_sensors self.robot', self.robot)
+        # print('on_sensors self.robot', self.robot)
         # print(os.stat(self.db_file))
         stamp = os.stat(self.db_file)[8] # .st_mtime
         print('stamp', stamp)
