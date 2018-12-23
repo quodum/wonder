@@ -48,7 +48,7 @@ class RobotConnection(object):
         # print('on_sensors self.robot', self.robot)
         # print(os.stat(self.db_file))
         stamp = os.stat(self.db_file)[8] # .st_mtime
-        print('stamp', stamp)
+        # print('stamp', stamp)
         if stamp != self._cached_stamp:
             print('read db')
             self._cached_stamp = stamp
